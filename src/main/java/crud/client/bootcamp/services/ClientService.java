@@ -20,4 +20,23 @@ public class ClientService {
 		
 		return list.map(x -> new ClientDTO(x));
 	}
+	
+	public ClientDTO getById(Long id) {
+		Client client = clientRepository.findById(id).get();
+		
+		return new ClientDTO(client);
+	}
+	
+	public ClientDTO insert(ClientDTO dto) {
+		Client client = new Client();
+		client.setName(dto.getName());
+		client.setCpf(dto.getCpf());
+		client.setBirthDate(dto.getBirthDate());
+		client.setChildren(dto.getChildren());
+		client.setIncome(dto.getIncome());
+		
+		client = clientRepository.save(client);
+		
+		return new ClientDTO(client);
+	}
 }
