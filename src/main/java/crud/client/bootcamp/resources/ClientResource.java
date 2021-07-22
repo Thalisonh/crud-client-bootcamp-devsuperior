@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import crud.client.bootcamp.entities.dto.ClientDTO;
-import crud.client.bootcamp.repositories.ClientRepository;
 import crud.client.bootcamp.services.ClientService;
 
 @RestController
